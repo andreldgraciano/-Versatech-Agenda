@@ -9,8 +9,14 @@
 </head>
 <body>
 
-    <header class="py-4 flex justify-center w-full bg-blue-400 text-white">
+    <header class="py-4 flex justify-around w-full bg-blue-400 text-white">
         <h1>Agenda Versatech</h1>
+        <ul class="flex gap-4">
+            <li><a href="#">Atividades</a></li>
+            <li><a href="#">Funcionários</a></li>
+            <li class="ml-6"><a href="#">Entrar</a></li>
+            <li><a href="#">Cadastrar</a></li>
+        </ul>
     </header>
 
     <main>
