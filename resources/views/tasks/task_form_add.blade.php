@@ -28,8 +28,8 @@
             <input type="number" step="5" name="duration_minutes" id="duration_minutes" placeholder="Duração em minutos..." class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
 
             <div class="flex pt-4 justify-between">
-                <a href="{{ route('taskList') }}" class="h-10 w-36 flex items-center justify-center bg-teal-900 rounded-md font-semibold text-white">Cancelar</a>
-                <button type="submit" class="h-10 w-36 flex items-center justify-center bg-teal-500 rounded-md font-semibold text-white">Registrar <ion-icon name="add-outline"></ion-icon></button>
+                <a href="{{ route('taskIndex') }}" class="h-10 w-36 flex items-center justify-center bg-teal-900 rounded-md font-semibold text-white">Cancelar</a>
+                <button type="submit" class="h-10 w-36 bg-teal-500 rounded-md font-semibold text-white">Registrar</button>
             </div>
         </form>
     </div>

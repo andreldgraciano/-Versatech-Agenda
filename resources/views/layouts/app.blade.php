@@ -20,7 +20,7 @@
         </ul>
     </header>
 
-    <main class="mx-20 py-4">
+    <main class="ml-4 sm:mx-20 py-4">
         @if (Session::has('success'))
             <div class="px-2 py-1 mb-4 bg-teal-500 rounded-md text-white">{{Session::get('success')}}</div>
         @endif

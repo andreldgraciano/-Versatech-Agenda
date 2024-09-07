@@ -9,9 +9,22 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::all();
+        $searchDate = request('searchDate');
+        $searchTitle = request('searchTitle');
 
-        return view('tasks.task_index', compact('tasks'));
+        if ($searchDate) {
+            $tasks = Task::where([
+                ['date', $searchDate]
+            ])->get();
+        } else if ($searchTitle){
+            $tasks = Task::where([
+                ['title', 'like', '%'.$searchTitle.'%' ]
+            ])->get();
+        } else {
+            $tasks = Task::all();
+        }
+
+        return view('tasks.task_index', compact('tasks', 'searchDate', 'searchTitle'));
     }
 
     public function taskFormCreate(){
