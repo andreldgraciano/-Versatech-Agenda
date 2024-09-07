@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -59,24 +59,37 @@ class TaskController extends Controller
 
     public function store(Request $request) {
         try {
+            $user = auth()->user();
+            
+            $durationMinutes = (int) $request->duration_minutes;
+    
+            $newTaskStartTime = Carbon::parse($request->start_time);
+            $newTaskEndTime = $newTaskStartTime->copy()->addMinutes($durationMinutes);
+    
+            $conflictingTask = Task::where('user_id', $user->id)
+                ->where(function ($query) use ($newTaskStartTime, $newTaskEndTime) {
+                    $query->whereBetween('start_time', [$newTaskStartTime, $newTaskEndTime])
+                          ->orWhereRaw('? BETWEEN start_time AND DATE_ADD(start_time, INTERVAL duration_minutes MINUTE)', [$newTaskStartTime]);
+                })
+                ->first();
+    
+            if ($conflictingTask) {
+                return redirect('/atividades/criar')->with('error', 'Conflito de horário com outra tarefa existente.');
+            }
+    
             $task = new Task;
-
             $task->title = $request->title;
             $task->description = $request->description;
             $task->address = $request->address;
             $task->date = $request->date;
-            $task->start_time = $request->start_time;
-            $task->duration_minutes = $request->duration_minutes;
-
-            $user = auth()->user();
+            $task->start_time = $newTaskStartTime;
+            $task->duration_minutes = $durationMinutes;
             $task->user_id = $user->id;
-
             $task->save();
-
-            return redirect('/atividades')->with('success', 'Atividade adicionada com sucesso!');
+    
+            return redirect('user/atividades')->with('success', 'Atividade adicionada com sucesso!');
         } catch (\Exception $e) {
-            // melhorar esta resposta
-            return redirect('/atividades/criar')->with('error', $e->getMessage());
+            return redirect('/atividades/criar')->with('error', 'Erro ao adicionar atividade: ' . $e->getMessage());
         }
     }
 
