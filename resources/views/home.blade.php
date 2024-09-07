@@ -3,6 +3,8 @@
 
 @section('main')
 
-    <p>home</p>
+    <div>
+        <p>home</p>
+    </div>
 
 @endsection
