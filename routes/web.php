@@ -15,12 +15,13 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', function () {
-    return view('home');
-})->name('home');
+    return redirect()->route('home');
+});
 
-Route::get('/atividades', [TaskController::class, 'index'])->name('taskIndex');
-Route::get('/atividades/criar', [TaskController::class, 'taskFormCreate'])->name('taskFormCreate');
-Route::post('/storeTask', [TaskController::class, 'store'])->name('taskStore');
+Route::get('/atividades', [TaskController::class, 'tasks'])->name('tasksList')->middleware('auth');
+Route::get('/user/atividades', [TaskController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/atividades/criar', [TaskController::class, 'taskFormCreate'])->name('taskFormCreate')->middleware('auth');
+Route::post('/storeTask', [TaskController::class, 'store'])->name('taskStore')->middleware('auth');
 Route::get('/atividades/{id}', [TaskController::class, 'show'])->name('taskShow');
 
 Route::middleware([

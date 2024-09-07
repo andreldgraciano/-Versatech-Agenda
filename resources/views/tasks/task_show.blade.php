@@ -20,7 +20,7 @@
 
     <div class="flex gap-4">
         <a  class="h-10 w-36 mt-4 flex gap-2 items-center justify-center self-end bg-teal-500 rounded-md font-semibold text-white" 
-        href="{{ route('taskIndex') }}">Voltar <ion-icon name="arrow-back-outline"></ion-icon>
+        href="{{ url()->previous() }}">Voltar <ion-icon name="arrow-back-outline"></ion-icon>
         </a>
         {{-- <a  class="h-10 w-36 mt-4 flex gap-2 items-center justify-center self-end bg-teal-800 rounded-md font-semibold text-white" 
             href="{{ route('taskFormCreate') }}">Excluir <ion-icon name="remove-outline"></ion-icon>

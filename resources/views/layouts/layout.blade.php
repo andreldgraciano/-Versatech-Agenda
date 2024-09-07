@@ -13,8 +13,10 @@
     <header class="h-16 flex md:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
         <a href="{{ route('home') }}" class="text-2xl font-semibold self-center sm:self-start md:self-center mt-1 md:mt-0">Agenda Versatech</a>
         <ul class="flex gap-4 items-center font-semibold self-center sm:self-end md:self-center mb-1 md:mb-0">
-            <li class="hover:text-teal-100"><a href="{{ route('taskIndex') }}">Atividades</a></li>
-            <li class="hover:text-teal-100"><a href="#{{-- {{ route('employeeList') }} --}}">Funcionários</a></li>
+            @auth
+                <li class="hover:text-teal-100"><a href="{{ route('tasksList') }}">Atividades</a></li>
+                <li class="hover:text-teal-100"><a href="#{{-- {{ route('employeeList') }} --}}">Funcionários</a></li>
+            @endauth
             @guest
                 <li class="hover:text-teal-100 ml-6"><a href="/login">Entrar</a></li>
                 <li class="hover:text-teal-100"><a href="/register">Cadastrar</a></li>
