@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('title', 'Atividades')
 
 @section('main')
@@ -42,7 +42,7 @@
                 <h4>Não possui atividades agendadas.</h4>
             @else
                 @foreach ($tasks as $task)
-                    <a href="/atividades/{{$task->id}}" class="relative shadow-lg hover:shadow-teal-200 p-4 rounded-md w-[260px]">
+                    <a href="/atividades/{{$task->id}}" class="relative shadow-lg hover:shadow-teal-200 p-4 rounded-md w-[260px] space-y-1">
                         <p class="text-lg font-semibold text-teal-500">{{$task->title}}</p>
                         <hr class="p-0.5">
                         <p>{{$task->description}}</p>
