@@ -10,12 +10,12 @@
 </head>
 <body class="flex flex-col h-screen">
 
-    <header class="py-4 flex sm:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
+    <header class="py-4 flex gap-2 md:gap-0 md:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
         <a href="{{ route('home') }}" class="text-2xl font-semibold sm:self-center">Agenda Versatech</a>
         <ul class="flex gap-4 items-center font-semibold self-center sm:self-center">
             @auth
-                <li class="hover:text-teal-100"><a href="{{ route('home') }}">Minhas</a></li>
-                <li class="hover:text-teal-100"><a href="{{ route('tasksList') }}">Empresa</a></li>
+                <li class="hover:text-teal-100"><a href="{{ route('home') }}">Minhas Atividades</a></li>
+                <li class="hover:text-teal-100"><a href="{{ route('tasksList') }}">Registro Empresa</a></li>
             @endauth
             @guest
                 <li class="hover:text-teal-100 ml-6"><a href="/login">Entrar</a></li>
