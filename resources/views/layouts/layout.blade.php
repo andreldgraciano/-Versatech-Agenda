@@ -8,19 +8,33 @@
     @vite('resources/css/app.css')
     <link rel="icon" type="image/x-icon" href="/favicon.ico/">
 </head>
-<body>
+<body class="flex flex-col h-screen">
 
     <header class="h-16 flex md:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
         <a href="{{ route('home') }}" class="text-2xl font-semibold self-center sm:self-start md:self-center mt-1 md:mt-0">Agenda Versatech</a>
         <ul class="flex gap-4 items-center font-semibold self-center sm:self-end md:self-center mb-1 md:mb-0">
             <li class="hover:text-teal-100"><a href="{{ route('taskIndex') }}">Atividades</a></li>
             <li class="hover:text-teal-100"><a href="#{{-- {{ route('employeeList') }} --}}">Funcionários</a></li>
-            <li class="hover:text-teal-100 ml-6"><a href="#">Entrar</a></li>
-            <li class="hover:text-teal-100"><a href="#">Cadastrar</a></li>
+            @guest
+                <li class="hover:text-teal-100 ml-6"><a href="/login">Entrar</a></li>
+                <li class="hover:text-teal-100"><a href="/register">Cadastrar</a></li>
+                @endguest
+            @auth
+                <li class="hover:text-teal-100">
+                    <form action="/logout" method="post">
+                        @csrf
+                        <a  href="/logout"
+                            onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                            Sair
+                        </a>
+                    </form>
+                </li>
+            @endauth
         </ul>
     </header>
 
-    <main class="ml-4 sm:mx-20 py-4">
+    <main class="ml-4 sm:mx-20 py-4 flex-grow">
         @if (Session::has('success'))
             <div class="px-2 py-1 mb-4 bg-teal-500 rounded-md text-white">{{Session::get('success')}}</div>
         @endif

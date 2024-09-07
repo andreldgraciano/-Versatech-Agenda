@@ -23,4 +23,12 @@ Route::get('/atividades/criar', [TaskController::class, 'taskFormCreate'])->name
 Route::post('/storeTask', [TaskController::class, 'store'])->name('taskStore');
 Route::get('/atividades/{id}', [TaskController::class, 'show'])->name('taskShow');
 
-// Route::get('/admin/funcionarios', [TaskController::class, 'index'])->name('employeeList');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
