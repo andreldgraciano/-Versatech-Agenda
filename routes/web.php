@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/atividades', [TaskController::class, 'index'])->name('taskList');
+Route::get('/atividades', [TaskController::class, 'index'])->name('taskIndex');
 Route::get('/atividades/criar', [TaskController::class, 'taskFormCreate'])->name('taskFormCreate');
 Route::post('/storeTask', [TaskController::class, 'store'])->name('taskStore');
+Route::get('/atividades/{id}', [TaskController::class, 'show'])->name('taskShow');
 
 // Route::get('/admin/funcionarios', [TaskController::class, 'index'])->name('employeeList');

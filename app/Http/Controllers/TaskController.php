@@ -31,9 +31,16 @@ class TaskController extends Controller
 
             $task->save();
 
-            return redirect('/atividades')->with('success', 'Atividade adicionada com sucesso');
+            return redirect('/atividades')->with('success', 'Atividade adicionada com sucesso!');
         } catch (\Exception $e) {
+            // melhorar esta resposta
             return redirect('/atividades/criar')->with('error', $e->getMessage());
         }
+    }
+
+    public function show($id) {
+        $task = Task::findOrFail($id);
+
+        return view('tasks.task_show', compact('task'));
     }
 }
