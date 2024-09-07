@@ -4,7 +4,7 @@
 @section('main')
 
     <div>
-        <p>home</p>
+        <p>home - Minhas atividades, onde o admin e user podem ver suas atividades</p>
     </div>
 
 @endsection
