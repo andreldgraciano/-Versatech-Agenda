@@ -10,9 +10,9 @@
 </head>
 <body>
 
-    <header class="h-16 flex justify-between items-center w-full px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
-        <a href="{{ route('home') }}" class="text-2xl font-semibold">Agenda Versatech</a>
-        <ul class="flex gap-4 items-center font-semibold">
+    <header class="h-16 flex md:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
+        <a href="{{ route('home') }}" class="text-2xl font-semibold self-center sm:self-start md:self-center mt-1 md:mt-0">Agenda Versatech</a>
+        <ul class="flex gap-4 items-center font-semibold self-center sm:self-end md:self-center mb-1 md:mb-0">
             <li class="hover:text-teal-100"><a href="{{ route('taskList') }}">Atividades</a></li>
             <li class="hover:text-teal-100"><a href="#{{-- {{ route('employeeList') }} --}}">Funcionários</a></li>
             <li class="hover:text-teal-100 ml-6"><a href="#">Entrar</a></li>
