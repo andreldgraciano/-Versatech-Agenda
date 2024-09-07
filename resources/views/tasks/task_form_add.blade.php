@@ -19,13 +19,13 @@
             <input type="text" name="address" id="address" placeholder="Rua, nº, Bairro..." class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
     
             <label for="date">Data:</label>
-            <input type="date" name="date" id="date" value="2024-12-25" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <input type="date" name="date" id="date" value="2024-09-10" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
     
             <label for="start_time">Horario: </label>
-            <input type="time" name="start_time" id="start_time" value="00:00" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <input type="time" name="start_time" id="start_time" value="10:15" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
 
             <label for="duration_minutes">Duração (minutos):</label>
-            <input type="number" step="5" name="duration_minutes" id="duration_minutes" placeholder="Duração em minutos..." class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <input type="number" name="duration_minutes" id="duration_minutes" placeholder="Duração em minutos..." class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
 
             <div class="flex pt-4 justify-between">
                 <a href="{{ route('home') }}" class="h-10 w-36 flex items-center justify-center bg-teal-900 rounded-md font-semibold text-white">Cancelar</a>

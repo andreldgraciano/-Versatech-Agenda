@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Task;
+use App\Models\User;
 
 class TaskController extends Controller
 {
@@ -96,6 +97,10 @@ class TaskController extends Controller
     public function show($id) {
         $task = Task::findOrFail($id);
 
-        return view('tasks.task_show', compact('task'));
+        $startTimestamp = strtotime($task->start_time); 
+        $endTimestamp = strtotime("+$task->duration_minutes minutes", $startTimestamp); 
+        $endTime = date('H:i', $endTimestamp);
+
+        return view('tasks.task_show', compact('task', 'endTime'));
     }
 }
