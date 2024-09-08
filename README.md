@@ -95,7 +95,7 @@ O projeto estará disponível no navegador em: http://127.0.0.1:8000.
 
 ## Tecnologias
 - Laravel Framework 11.22.0
-  - Jetstream + Wireframe
+  - Jetstream + Livewire
 - PHP 8.2.0
 - MySQL
 - Tailwindcss
