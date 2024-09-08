@@ -1,4 +1,4 @@
-<p align="center"><img src="public/favicon.ico" width="100" alt="Versatech Logo"></p>
+<p align="center"><img src="public/readme/desafio.png" width="600" alt="Versatech Logo"></p>
 
 # Desafio Versatech Agenda
 Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Framework Laravel
@@ -59,12 +59,12 @@ Para a criação dos templates da view, foi utilizado o blade.
 
 ## Funcionalidades:
 - Login (Jetstream + Wireframe)
-  <p align="center"><img src="public/readme/img-login.png" width="300" alt="Versatech Logo"></p>
+  <p align="center"><img src="public/readme/img-login.png" width="600" alt="Versatech Logo"></p>
 - Registro de Atividades
-  <p align="center"><img src="public/readme/img-store-task.png" width="300" alt="Versatech Logo"></p>
+  <p align="center"><img src="public/readme/img-store-task.png" width="600" alt="Versatech Logo"></p>
 - Listar Minhas Atividades
-  <p align="center"><img src="public/readme/img-tasks-user.png" width="300" alt="Versatech Logo"></p>
+  <p align="center"><img src="public/readme/img-tasks-user.png" width="600" alt="Versatech Logo"></p>
 - Listar Registro de Atividades da Empresa
-  <p align="center"><img src="public/readme/img-tasks-all.png" width="300" alt="Versatech Logo"></p>
+  <p align="center"><img src="public/readme/img-tasks-all.png" width="600" alt="Versatech Logo"></p>
 - Filtro de atividades por Título ou Data
-  <p align="center"><img src="public/readme/img-filter.png" width="300" alt="Versatech Logo"></p>
+  <p align="center"><img src="public/readme/img-filter.png" width="600" alt="Versatech Logo"></p>
