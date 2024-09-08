@@ -4,6 +4,9 @@
 @section('main')
 
     <div class="flex flex-col space-y-4">
+        <h2 class="text-teal-500 text-xl">Minhas Atividades</h2>
+        <hr>
+
         <div class="flex flex-wrap gap-4 items-center">
             <a  class="h-10 w-10 flex items-center justify-center bg-teal-500 rounded-md font-semibold text-white" 
                 href="{{ route('taskFormCreate') }}"><ion-icon name="add-outline" size="large"></ion-icon>
@@ -26,10 +29,10 @@
             </a>
         </div>
 
-        @if ($searchDate)
+        @if (isset($searchDate))
             <p class="text-lg">Buscando por atividades na data: {{date('d/m/Y', strtotime($searchDate))}}</p>
             <hr>
-        @elseif ($searchTitle)
+        @elseif (isset($searchTitle))
             <p class="text-lg">Buscando por atividades com titulo: {{$searchTitle}}</p>
             <hr>
         @endif

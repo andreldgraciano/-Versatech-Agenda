@@ -9,7 +9,7 @@ use App\Models\User;
 
 class TaskController extends Controller
 {
-    public function index(){
+    public function tasks_user(){
         $searchDate = request('searchDate');
         $searchTitle = request('searchTitle');
         
@@ -32,10 +32,10 @@ class TaskController extends Controller
         }
 
 
-        return view('home', compact('tasks', 'searchDate', 'searchTitle'));
+        return view('tasks.tasks_user', compact('tasks', 'searchDate', 'searchTitle'));
     }
 
-    public function tasks(){
+    public function tasks_all(){
         $searchDate = request('searchDate');
         $searchTitle = request('searchTitle');
 
@@ -51,7 +51,7 @@ class TaskController extends Controller
             $tasks = Task::all();
         }
 
-        return view('tasks.tasks_list', compact('tasks', 'searchDate', 'searchTitle'));
+        return view('tasks.tasks_all_users', compact('tasks', 'searchDate', 'searchTitle'));
     }
 
     public function taskFormCreate(){
