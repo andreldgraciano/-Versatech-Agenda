@@ -21,6 +21,7 @@ O projeto deverá ser versionado com as mudanças periódicas utilizando a ferra
 
 ## Tecnologias
 - Laravel Framework 11.22.0
+  - Jetstream + Wireframe
 - PHP 8.2.0
 - MySQL
 - Tailwindcss
@@ -31,9 +32,9 @@ O desenvolvimento do projeto foi orientado ao padrão MVC.
 
 ### Model
 
-**Model User**: Este model é padrão de uma app laravel, nenhuma mudança foi feita neste model.
+**Model User**: Este modelo é o padrão fornecido pela aplicação Laravel, com a única modificação sendo a adição do relacionamento hasMany com o modelo Task, indicando que um User pode ter múltiplas Tasks.
 
-**Model Task**: Este modelo foi criado utilizando uma migration, seguida por outra migration que adicionou a chave estrangeira user_id, estabelecendo um relacionamento de um para muitos com o modelo User. Os atributos presentes no modelo são:
+**Model Task**: Este modelo foi criado inicialmente por meio de uma migration, seguida por outra que adicionou a chave estrangeira user_id, estabelecendo um relacionamento belongsTo com o modelo User. Isso indica que cada Task pertence a um único User. Os atributos presentes no modelo são:
 - id()
 - string('title')
 - text('description')
@@ -57,14 +58,17 @@ Para a criação dos templates da view, foi utilizado o blade.
 - **store()**: Método responsável por armazenar no banco de dados uma nova atividade.
 - **show($id)**: Método responsável por retornar uma view com detalhes de uma atividade através do id referente à atividade.
 
-## Funcionalidades:
-- Login (Jetstream + Wireframe)
-  <p align="center"><img src="public/readme/img-login.png" width="600" alt="Versatech Logo"></p>
+## Funcionalidades
+- Login
+  <p><img src="public/readme/img-login.png" width="600" alt="Versatech Logo"></p>
 - Registro de Atividades
-  <p align="center"><img src="public/readme/img-store-task.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-store-task.png" width="600" alt="Versatech Logo"></p>
 - Listar Minhas Atividades
-  <p align="center"><img src="public/readme/img-tasks-user.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-tasks-user.png" width="600" alt="Versatech Logo"></p>
 - Listar Registro de Atividades da Empresa
-  <p align="center"><img src="public/readme/img-tasks-all.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-tasks-all.png" width="600" alt="Versatech Logo"></p>
 - Filtro de atividades por Título ou Data
-  <p align="center"><img src="public/readme/img-filter.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-filter.png" width="600" alt="Versatech Logo"></p>
+
+## Diagrama de Entidade e Relacionamento
+<p><img src="public/readme/DER.png" width="600" alt="Versatech Logo"></p>
