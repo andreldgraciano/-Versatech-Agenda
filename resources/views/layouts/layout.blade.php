@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Versatech - @yield('title')</title>
     @vite('resources/css/app.css')
-    <link rel="icon" type="image/x-icon" href="/favicon.ico/">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body class="flex flex-col h-screen">
 
