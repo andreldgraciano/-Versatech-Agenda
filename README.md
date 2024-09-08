@@ -1,66 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="public/favicon.ico" width="100" alt="Versatech Logo"></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Desafio Versatech Agenda
+Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Framework Laravel
 
-## About Laravel
+### Objetivo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O objetivo deste projeto é testar as habilidades diante do uso da linguagem orientada a objetos e o padrão MVC. O Framework Laravel lida com isso de uma maneira muito elegante, além de criar páginas simples e intuitivas de forma rápida e eficaz através dos arquivos blade.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Descrição
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O projeto deverá possuir uma tela de login para as devidas autenticações e assim ser um sistema multiusuário. Deverá possuir um cadastro de usuário e outro de tarefa onde o sistema não deverá permitir cadastros de tarefas no mesmo dia e horários para um mesmo usuário. Deve-se gerar nomenclaturas intuitivas das rotas para uma identificação simples das requisições. A utilização de Javascript, jquery e ajax é livre caso ache necessário.
 
-## Learning Laravel
+Para o layout poderá ser utilizado o bootstrap ou qualquer outra biblioteca para facilitar na construção do designer e assim apresentar na tela as tarefas agendadas de cada usuário.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+O banco de dados utilizado deverá ser o mysql sendo necessário realizar um estudo e geração de um diagrama de entidade e relacionamento para facilitar o entendimento e utilização das tabelas do banco.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+O projeto deverá ser versionado com as mudanças periódicas utilizando a ferramenta Git e publicado no GitHub.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Desenvolvimento do App
 
-## Laravel Sponsors
+## Tecnologias
+- Laravel Framework 11.22.0
+- PHP 8.2.0
+- MySQL
+- Tailwindcss
+- Git e GitHub
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## MVC
+O desenvolvimento do projeto foi orientado ao padrão MVC.
 
-### Premium Partners
+### Model
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Model User**: Este model é padrão de uma app laravel, nenhuma mudança foi feita neste model.
 
-## Contributing
+**Model Task**: Este model foi criado através de migration, com os seguintes atributos:
+- id()
+- dsadsa
+- string('title')
+- text('description')
+- date('date')
+- string('address')
+- time('start_time')
+- integer('duration_minutes')
+- timestamps()
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### View
 
-## Code of Conduct
+Para a criação dos templates da view, foi utilizado o blade.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Controller
 
-## Security Vulnerabilities
+**Task Controller**: Este controller é o responsável por receber requisições, processá-las, interagir com o modelo (dados) e, em seguida, retornar uma resposta. Foram implementadas os seguintes métodos no Task Controller:
+- **tasks_user()**: Método responsável por retornar uma view com todas atividades do usuário conectado.
+- **tasks_all()**: Método responsável por retornar uma view com todas atividades registradas na app.
+- **taskFormCreate()**: Método responsável por retornar uma view para registro de atividade.
+- **store()**: Método responsável por armazenar no banco de dados uma nova atividade.
+- **show($id)**: Método responsável por retornar uma view com detalhes de uma atividade através do id referente à atividade.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Funcionalidades:
+- Login (Jetstream + Wireframe)
+  <p align="center"><img src="public/readme/img-login.png" width="300" alt="Versatech Logo"></p>
+- Registro de Atividades
+  <p align="center"><img src="public/readme/img-store-task.png" width="300" alt="Versatech Logo"></p>
+- Listar Minhas Atividades
+  <p align="center"><img src="public/readme/img-tasks-user.png" width="300" alt="Versatech Logo"></p>
+- Listar Registro de Atividades da Empresa
+  <p align="center"><img src="public/readme/img-tasks-all.png" width="300" alt="Versatech Logo"></p>
+- Filtro de atividades por Título ou Data
+  <p align="center"><img src="public/readme/img-filter.png" width="300" alt="Versatech Logo"></p>
