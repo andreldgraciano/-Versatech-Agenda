@@ -2,8 +2,7 @@
 @section('title', 'Login')
 
 @section('main')
-
-<x-guest-layout>
+<div class="flex items-center w-full h-full justify-center">
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -62,6 +61,5 @@
             </div>
         </form>
     </x-authentication-card>
-</x-guest-layout>
-
+</div>
 @endsection
