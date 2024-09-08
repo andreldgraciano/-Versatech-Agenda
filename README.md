@@ -16,7 +16,7 @@ Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Fr
 	- [Execute as Migrações](#execute-as-migrações)
 	- [Instale as dependências do Node.js](#instale-as-dependências-do-nodejs)
 	- [Inicie o Servidor de Desenvolvimento](#inicie-o-servidor-de-desenvolvimento)
-- [Desenvolvimento do App](#desenvolvimento-do-app)
+- [Desenvolvimento da Aplicação](#desenvolvimento-da-aplicação)
 	- [Tecnologias](#tecnologias)
 	- [MVC](#mvc)
 	- [Funcionalidades](#funcionalidades)
@@ -77,6 +77,11 @@ Neste momento, verifique se você tem um servidor de banco de dados MySQL em exe
 php artisan migrate
 ```
 
+A aplicação possui uma Factory para criar usuários e tarefas (Users e Tasks). Para executar essas Factories e adicionar os dados iniciais ao banco (seeds), basta rodar o seguinte comando:
+```bash
+php artisan db:seed
+```
+
 ### Instale as dependências do Node.js
 ```console
 npm install
@@ -91,7 +96,7 @@ php artisan serve
 ```
 O projeto estará disponível no navegador em: http://127.0.0.1:8000.
 
-# Desenvolvimento do App
+# Desenvolvimento da Aplicação
 
 ## Tecnologias
 - Laravel Framework 11.22.0
@@ -127,7 +132,7 @@ Para a criação dos templates da view, foi utilizado o blade.
 
 **Task Controller**: Este controller é o responsável por receber requisições, processá-las, interagir com o modelo (dados) e, em seguida, retornar uma resposta. Foram implementadas os seguintes métodos no Task Controller:
 - **tasks_user()**: Método responsável por retornar uma view com todas atividades do usuário conectado.
-- **tasks_all()**: Método responsável por retornar uma view com todas atividades registradas na app.
+- **tasks_all()**: Método responsável por retornar uma view com todas atividades registradas na aplicação.
 - **taskFormCreate()**: Método responsável por retornar uma view para registro de atividade.
 - **store()**: Método responsável por armazenar no banco de dados uma nova atividade.
 - **show($id)**: Método responsável por retornar uma view com detalhes de uma atividade através do id referente à atividade.
