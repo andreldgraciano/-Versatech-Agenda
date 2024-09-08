@@ -33,9 +33,8 @@ O desenvolvimento do projeto foi orientado ao padrão MVC.
 
 **Model User**: Este model é padrão de uma app laravel, nenhuma mudança foi feita neste model.
 
-**Model Task**: Este model foi criado através de migration, com os seguintes atributos:
+**Model Task**: Este modelo foi criado utilizando uma migration, seguida por outra migration que adicionou a chave estrangeira user_id, estabelecendo um relacionamento de um para muitos com o modelo User. Os atributos presentes no modelo são:
 - id()
-- dsadsa
 - string('title')
 - text('description')
 - date('date')
@@ -43,6 +42,7 @@ O desenvolvimento do projeto foi orientado ao padrão MVC.
 - time('start_time')
 - integer('duration_minutes')
 - timestamps()
+- foreignId('user_id')
 
 ### View
 
