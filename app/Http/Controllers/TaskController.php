@@ -61,22 +61,27 @@ class TaskController extends Controller
     public function store(Request $request) {
         try {
             $user = auth()->user();
-            
-            $durationMinutes = (int) $request->duration_minutes;
     
+            $durationMinutes = (int) $request->duration_minutes;
             $newTaskStartTime = Carbon::parse($request->start_time);
+            $newTaskStartTime->addMinute();
             $newTaskEndTime = $newTaskStartTime->copy()->addMinutes($durationMinutes);
     
             $conflictingTask = Task::where('user_id', $user->id)
+                ->whereDate('date', $request->date)
                 ->where(function ($query) use ($newTaskStartTime, $newTaskEndTime) {
                     $query->whereBetween('start_time', [$newTaskStartTime, $newTaskEndTime])
-                          ->orWhereRaw('? BETWEEN start_time AND DATE_ADD(start_time, INTERVAL duration_minutes MINUTE)', [$newTaskStartTime]);
+                          ->orWhereRaw('? BETWEEN start_time AND DATE_ADD(start_time, INTERVAL duration_minutes MINUTE)', [$newTaskStartTime])
+                          ->orWhereRaw('start_time BETWEEN ? AND ?', [$newTaskStartTime, $newTaskEndTime])
+                          ->orWhereRaw('DATE_ADD(start_time, INTERVAL duration_minutes MINUTE) BETWEEN ? AND ?', [$newTaskStartTime, $newTaskEndTime]);
                 })
                 ->first();
     
             if ($conflictingTask) {
                 return redirect('/atividades/criar')->with('error', 'Conflito de horário com outra tarefa existente.');
             }
+
+            $newTaskStartTime->subMinute();
     
             $task = new Task;
             $task->title = $request->title;
@@ -92,7 +97,7 @@ class TaskController extends Controller
         } catch (\Exception $e) {
             return redirect('/atividades/criar')->with('error', 'Erro ao adicionar atividade: ' . $e->getMessage());
         }
-    }
+    }    
 
     public function show($id) {
         $task = Task::findOrFail($id);
