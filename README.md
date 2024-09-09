@@ -9,8 +9,8 @@ Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Fr
 	- [Objetivo](#objetivo)
 	- [Descrição](#descrição)
 - [Instalação](#instalação)
-	- [Dependências](#dependências)
-	- [Instale Dependencias do projeto](#instale-dependencias-do-projeto)
+	- [Dependências do Sistema](#dependências-do-sistema)
+	- [Instale Dependencias do Projeto](#instale-dependencias-do-projeto)
 	- [Configurando o Arquivo .env](#configurando-o-arquivo-env)
 	- [Gere a Chave de Aplicação](#gere-a-chave-de-aplicação)
 	- [Execute as Migrações](#execute-as-migrações)
@@ -40,11 +40,11 @@ O projeto deverá ser versionado com as mudanças periódicas utilizando a ferra
 
 # Instalação
 
-### Dependências
+### Dependências do Sistema
 - php 8.2.0^
 - Composer
 
-### Instale Dependencias do projeto
+### Instale Dependencias do Projeto
 ```console
 composer install
 ```
