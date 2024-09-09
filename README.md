@@ -82,6 +82,8 @@ A aplicação possui uma Factory para criar usuários e tarefas (Users e Tasks).
 php artisan db:seed
 ```
 
+Um user com email `admin@admin.com` e senha `admin123` será criado junto com a Factory.
+
 ### Instale as dependências do Node.js
 ```console
 npm install
