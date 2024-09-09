@@ -1,6 +1,6 @@
-<p align="center"><img src="public/readme/desafio.png" width="600" alt="Versatech Logo"></p>
+<p align="center"><img src="public/readme/desafio.png" width="600" alt="Versatec Logo"></p>
 
-# Desafio Versatech Agenda
+# Desafio Versatec Agenda
 Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Framework Laravel
 
 ## Tabela de Conteúdo
@@ -20,6 +20,7 @@ Desenvolver uma agenda utilizando as tecnologias PHP e Mysql juntamente com o Fr
 	- [Tecnologias](#tecnologias)
 	- [MVC](#mvc)
 	- [Funcionalidades](#funcionalidades)
+	- [Layout Responsivo](#layout-responsivo)
 	- [Diagrama de Entidade e Relacionamento](#diagrama-de-entidade-e-relacionamento)
 
 # O Desafio
@@ -139,17 +140,21 @@ Para a criação dos templates da view, foi utilizado o blade.
 - **store()**: Método responsável por armazenar no banco de dados uma nova atividade.
 - **show($id)**: Método responsável por retornar uma view com detalhes de uma atividade através do id referente à atividade.
 
+## Layout Responsivo
+
+<p align="center"><img src="public/readme/responsive-layout.gif" width="600" alt="Layout Responsivo"></p>
+
 ## Funcionalidades
 - Login
-  <p><img src="public/readme/img-login.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-login.png" width="600" alt="Tela de Login"></p>
 - Registro de Atividades
-  <p><img src="public/readme/img-store-task.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-store-task.png" width="600" alt="Tela Registro de Atividades"></p>
 - Listar Minhas Atividades
-  <p><img src="public/readme/img-tasks-user.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-tasks-user.png" width="600" alt="Tela Listar Minhas Atividades"></p>
 - Listar Registro de Atividades da Empresa
-  <p><img src="public/readme/img-tasks-all.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-tasks-all.png" width="600" alt="Tela Listar Registro de Atividades da Empresa"></p>
 - Filtro de atividades por Título ou Data
-  <p><img src="public/readme/img-filter.png" width="600" alt="Versatech Logo"></p>
+  <p><img src="public/readme/img-filter.png" width="600" alt="Tela Filtro de atividades por Título ou Data"></p>
 
 ## Diagrama de Entidade e Relacionamento
-<p><img src="public/readme/DER.png" width="600" alt="Versatech Logo"></p>
+<p><img src="public/readme/DER.png" width="600" alt="Diagrama de Entidade e Relacionamento"></p>

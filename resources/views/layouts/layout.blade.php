@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Versatech - @yield('title')</title>
+    <title>Versatec - @yield('title')</title>
     @vite('resources/css/app.css')
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body class="flex flex-col h-screen">
 
     <header class="py-4 flex gap-2 md:gap-0 md:flex-row flex-col justify-between items-center w-full px-4 sm:px-20 bg-gradient-to-r from-teal-800 to-teal-500 text-white">
-        <a href="{{ route('home') }}" class="text-2xl font-semibold sm:self-center">Agenda Versatech</a>
+        <a href="{{ route('home') }}" class="text-2xl font-semibold sm:self-center">Agenda Versatec</a>
         <ul class="flex gap-4 items-center font-semibold self-center sm:self-center">
             @auth
                 <li class="hover:text-teal-100"><a href="{{ route('home') }}">Minhas Atividades</a></li>
@@ -50,7 +50,7 @@
     </main>
 
     <footer class="py-4 flex justify-center w-full bg-teal-800 text-white">
-        <p>Agenda Versatech &copy; 2024</p>
+        <p>Agenda Versatec &copy; 2024</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
