@@ -39,16 +39,18 @@
                 <h4>Não possui atividades agendadas.</h4>
             @else
                 @foreach ($tasks as $task)
-                    <a href="/atividades/{{$task->id}}" class="relative shadow-lg hover:shadow-teal-200 p-4 rounded-md w-[260px] space-y-1">
-                        <p class="text-lg font-semibold text-teal-500">{{$task->title}}</p>
-                        <hr class="p-0.5">
+                <a href="/atividades/{{$task->id}}" class="relative shadow-lg hover:shadow-teal-200 p-4 rounded-md w-[260px] flex flex-col justify-between">
+                    <p class="text-lg font-semibold text-teal-500">{{$task->title}}</p>
+                    <hr class="p-0.5">
+                    <div>
                         <p>{{$task->description}}</p>
                         <ul class="flex justify-between">
                             <li class="flex items-center gap-1"><ion-icon name="calendar-outline"></ion-icon>{{date('d/m/Y', strtotime($task->date))}}</li>
                             <li class="flex items-center">|</li>
                             <li class="flex items-center gap-1"><ion-icon name="time-outline"></ion-icon>{{ date('H:i', strtotime($task->start_time)) }}</li>
                         </ul>
-                    </a>
+                    </div>
+                </a>
                 @endforeach
             @endif
         </div>
