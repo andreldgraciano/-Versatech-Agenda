@@ -142,6 +142,8 @@ Para a criação dos templates da view, foi utilizado o blade.
 
 ## Layout Responsivo
 
+Clique em `Play` no vídeo abaixo para ver como o layout da aplicação se adapta de forma responsiva.
+
 <p align="center"><img src="public/readme/responsive-layout.gif" width="600" alt="Layout Responsivo"></p>
 
 ## Funcionalidades
