@@ -50,7 +50,7 @@
     </main>
 
     <footer class="py-4 flex justify-center w-full bg-teal-800 text-white">
-        <p>Agenda Versatec &copy; 2024</p>
+        <p>André - Agenda Versatec &copy; 2024</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
